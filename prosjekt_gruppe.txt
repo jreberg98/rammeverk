@@ -1,0 +1,9 @@
+Rammeverk
+Gruppe: 4
+Deltagere: Jonathan Reberg, Adrian Brandt
+
+Prosjekt:
+Vi lager et rammeverk som skal kunne brukes som en konverter for filtypen Json og Xml. Dette rammeverket skal kunne ta inn en Json fil eller en Xml fil hvor den da vil omgjøre innholdet til en lesbar og brukbar fil i den motsatte filtypen. Vi planlegger å bruke MySQL til å lagre innholdet som blir omgjort i rammeverket som en type logg/beholder for infoen i filene. Ved å bruke en database som loggføring vil det bli enklere å feilsøke om noe skal gå gale med rammeverket og det vil gi en mulighet for å videreføre innholdet til en annen type konverter om dette skulle bli interessant i framtiden.
+
+Gruppe:
+Jeg og Jonathan ble først kjent gjennom et gruppeprosjekt i et tidligere semester på hiof. Vi har jobbet sammen på 5 gruppeprosjekt tidligere som gjør det enkelt for oss å møtes opp for et nytt prosjekt. Vi planlegger fysisk oppmøte samt eget arbeid over discord som framgangsmåte i dette prosjektet ettersom fysisk oppmøte alltid hjelper på arbeidsmoral. Vi bor begge to sentralt i Halden som også gjør at fysisk oppmøte blir enklere for oss begge.

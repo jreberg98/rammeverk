@@ -1,0 +1,20 @@
+Veiledning 12 februar
+
+Konverte filer, starter med JSON til XML med database som mellomledd
+
+Senarioer
+    Konkrete oppgaver
+    Konverter
+        Åpne JSON fil og lagre som XML
+    Parse
+        Åpne JSON fra disk / nett
+            Hente alle elementer
+
+
+Steg 2
+    Andre grupper ser på det vi har, og prøver å løse "oppgaver" vi har laget
+
+
+
+API er viktigst
+Begge bør prøve å løse hvert senario

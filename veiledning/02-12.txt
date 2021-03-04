@@ -18,3 +18,6 @@ Steg 2
 
 API er viktigst
 Begge bør prøve å løse hvert senario
+
+
+Muligheten til å hente filen ut filen ut fra nett(URL?)

@@ -1,4 +1,4 @@
-Rammeverk
+FileHandler
 Gruppe: 4
 Deltagere: Jonathan Reberg, Adrian Brandt
 

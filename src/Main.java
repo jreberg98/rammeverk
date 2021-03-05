@@ -23,12 +23,12 @@ public class Main {
         Result innest = inner.getByTag("age");
 
         // Hente ut spesifisert innhold i Xml
-        Result data = FileHandler.getXML("fil.xml");
-        Result object = data.getByTag("planetsystemet");
-        Result outer = object.getByTag("planet");
-        Result middle = outer.getByTag("by");
-        Result inner = middle.getByTag("person");
-        Result innest = inner.getByTag("age");
+        Result dataXML = FileHandler.getXML("fil.xml");
+        Result objectXML = dataXML.getByTag("planetsystemet");
+        Result outerXML = objectXML.getByTag("planet");
+        Result middleXML = outerXML.getByTag("by");
+        Result innerXML = middleXML.getByTag("person");
+        Result innestXML = innerXML.getByTag("age");
 
         /*----------REDIGERING-----------*/
         //redigere innhold i spesifisert tag i filen
@@ -45,7 +45,7 @@ public class Main {
 
 
         // Dersom db en kobling gir den alle schema med alle tabeller, dersom db er et schema gir den alle tabeller, dersom det er en tabell gir den alt i tabellen
-        Result data = FileHandler.getMYSQL(dbFull);
+        Result dataMySQL = FileHandler.getMYSQL(dbFull);
 
 
         /* ---------- SKRIVE ------------------ */

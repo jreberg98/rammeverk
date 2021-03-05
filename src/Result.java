@@ -2,9 +2,11 @@ public class Result {
 
 
     public Result getByTag(String planetsystemet) {
+        return null;
     }
 
     public Result getSelected(String tag) {
+        return null;
     }
 
     public void setValue(String new_value, String path) {

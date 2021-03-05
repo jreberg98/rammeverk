@@ -12,12 +12,15 @@ public class Converter {
 
 /*----------- FIL INFO FOR KONVERTOR&TOSTRING---------*/
     private String printFile() {
+        return null;
     }
 
     private String getFileType() {
+        return null;
     }
 
     private String getFileName() {
+        return null;
     }
 
 

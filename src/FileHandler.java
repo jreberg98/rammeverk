@@ -1,12 +1,11 @@
 import java.util.HashMap;
 
-public static class FileHandler {
+public class FileHandler {
 
 
     public static DB connectMYSQL(String adresse, String brukernavn, String passord) {
+        return null;
     }
-
-
 
     public static void writeXML(Object[] ting, String filnavn) {
     }
@@ -40,12 +39,15 @@ public static class FileHandler {
     }
 
     public static Result getJSON(String s) {
+        return null;
     }
 
     public static Result getXML(String s) {
+        return null;
     }
 
     public static Result getMYSQL(DB dbFull) {
+        return null;
     }
 
     public static void append(Result object) {

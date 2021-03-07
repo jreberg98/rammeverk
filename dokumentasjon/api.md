@@ -4,22 +4,22 @@
 ### Constructors
 | Return | Parameters | Description |
 |--------|------------|-------------|
-| Result | String fileName | Returns a Result object that contains data from the file. If the file is not found, a "FileNotFound" exception is thrown.|
+| Result | String fileName | Returns a Result object that contains data from the file. If the file is not found, a "FileNotFound" exception will be thrown.|
 
 ## Static methods
 |Return | Method | Parameters | Description |
 |--------|-----------|------------|----------|
-| DB | connectMYSQL | String address, String user, String password | Returns a connection to a MySQL database, either local or remote. If the username and/or password is wrong, a "Login exception" is thrown. |
-| Result | getJSON | String fileName | Opens a JSON file, that can be accessed as a Result. If the the file is not found, a FileNotFound exception is thrown.|
-| Result | getXML | String fileName | Opens a XML file, that can be accessed as a Result. If the the file is not found, a FileNotFound exception is thrown. |
+| DB | connectMYSQL | String address, String user, String password | Returns a connection to a MySQL database, either local or remote. If the username and/or password is wrong, a "Login exception" will be thrown. |
+| Result | getJSON | String fileName | Opens a JSON file, that can be accessed as a Result. If the the file is not found, a FileNotFound exception will be thrown.|
+| Result | getXML | String fileName | Opens a XML file, that can be accessed as a Result. If the the file is not found, a FileNotFound exception will be thrown. |
 
 ## Result
 ### Methods
 | Return | Method | Parameters | Description |
 |--------|--------|------------| ------------|
-| Result | getByTag()|String tagName| Returns the element(s) within the tag. If the tag is not found, a "TagNotFound" exception is thrown.|
+| Result | getByTag()|String tagName| Returns the element(s) within the tag. If the tag is not found, a "TagNotFound" exception will be thrown.|
 | Result | changeValue() | String newValue | Sets the value in the current element to the new value. |
-| String | getPath() | - | Returns the path to the value(s) that are active, int he format of directory paths. For example "\<fileName\>/Norway/Østfold/Halden" where Halden is the current selected field. |
+| String | getPath() | - | Returns the path to the value(s) that are active, in the format of directory paths. For example "\<fileName\>/Norway/Østfold/Halden" where Halden is the current selected field. |
 | void | setValue() | String newValue | Sets the value in the active field to the newValue. |
 | void | setValue() | String newValue, String path | Sets the value in any part of the file to the value. |
 | void | addValue() | String key, String value | Adds a new entry in the current location in the file, with key as a reference and the value as the value. |

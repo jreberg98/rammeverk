@@ -23,6 +23,6 @@
 | void | setValue() | String newValue | Sets the value in the active field to the newValue. |
 | void | setValue() | String newValue, String path | Sets the value in any part of the file to the value. |
 | void | addValue() | String key, String value | Adds a new entry in the current location in the file, with key as a reference and the value as the value. |
-// TODO: hente ut et felt generelt av en instanse
+<>(TODO: hente ut et felt generelt av en instanse)
 | void | addValue() | TreeNode values, Field key | Adds the values in the tree to the current location in the file. This requires that the structure is a tree, and therefore not contains a cycle. |
 | void | append() | TreeNode | values | Adds the values to the end of the file, structured as the tree is. |

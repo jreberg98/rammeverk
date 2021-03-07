@@ -79,6 +79,9 @@ public class Main {
         FileHandler.JSONtoMYSQL("fil.json", dbTabell, "schema", "table");
         FileHandler.MYSQLtoJSON(dbFull, "nyfil.json");
         FileHandler.MYSQLtoJSON(dbFull, "schema", "table", "nyfil.json");
+
+
+        // TODO: Legge til setValue(String), setValue(String, String), addValue(String, String), addValue(Tree)
     }
 
 

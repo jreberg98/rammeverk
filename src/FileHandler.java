@@ -34,6 +34,7 @@ public class FileHandler {
     public static void MYSQLtoJSON(DatabaseHandler dbFull, String schema, String table, String jsonFile) {
     }
 
+    // TODO: Fjerne denne
     public static void getSelected(String tag){
 
     }
@@ -50,6 +51,7 @@ public class FileHandler {
         return null;
     }
 
+    // TODO: Fjerne denne?
     public static void append(Result object) {
     }
 }

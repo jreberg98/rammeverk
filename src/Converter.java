@@ -1,5 +1,5 @@
 import java.io.File;
-
+// TODO: Fjerne hele filen?
 public class Converter {
 
 /* ------------- HENTE FIL LOKALT ELLER FRA URL -----------*/

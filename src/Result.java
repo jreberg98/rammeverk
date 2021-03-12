@@ -9,15 +9,19 @@ public class Result {
         return null;
     }
 
-    public void setValue(String new_value, String path) {
+    public void setValue(String new_value, String pathInFile) {
     }
+
+    public void setValue(String newValue, long lineNumber){}
 
     public String getPath() {
         return null;
     }
 
-    public void append(Result object) {
+    public void append(Object object) {
     }
-    public void append(Result object, String path) {
+    public void append(Object object, String pathInFile) {
+    }
+    public void append(Object object, long lineNumber){
     }
 }

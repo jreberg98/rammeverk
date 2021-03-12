@@ -1,4 +1,4 @@
-import java.util.HashMap;
+
 
 public class Main {
 
@@ -7,9 +7,9 @@ public class Main {
 
         /* ------------- DATABASE ---------------- */
         // En ekstra klasse til å holde en kobling til databasen
-        DB dbFull = FileHandler.connectMYSQL("adresse", "brukernavn", "passord");
-        DB dbSkjema = FileHandler.connectMYSQL("adresse", "brukernavn", "passord").selectSchema("skjema");
-        DB dbTabell = FileHandler.connectMYSQL("adresse", "brukernavn", "passord").selectSchema("skjema").selectTable("navn");
+        DatabaseHandler dbFull = FileHandler.connectMYSQL("adresse", "brukernavn", "passord");
+        DatabaseHandler dbSkjema = FileHandler.connectMYSQL("adresse", "brukernavn", "passord").selectSchema("skjema");
+        DatabaseHandler dbTabell = FileHandler.connectMYSQL("adresse", "brukernavn", "passord").selectSchema("skjema").selectTable("navn");
 
 
         /* ----------   LESE FRA FIL   ------------ */

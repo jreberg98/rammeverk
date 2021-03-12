@@ -3,50 +3,50 @@ import java.util.HashMap;
 public class FileHandler {
 
 
-    public static DB connectMYSQL(String adresse, String brukernavn, String passord) {
+    public static DatabaseHandler connectMYSQL(String address, String username, String password ) {
         return null;
     }
 
-    public static void writeXML(Object[] ting, String filnavn) {
+    public static void writeXML(Object[] ting, String fileName) {
     }
 
-    public static void writeJSON(Object[] ting, String filnavn){
+    public static void writeJSON(Object[] ting, String fileName){
     }
 
-    public static void MYSQLtoJSON(DB dbFull, String s) {
+    public static void MYSQLtoJSON(DatabaseHandler dbFull, String fileName) {
     }
 
-    public static void JSONtoMYSQL(String s, DB dbTabell, String schema, String table) {
+    public static void JSONtoMYSQL(String fileName, DatabaseHandler dbTabell, String schema, String table) {
     }
 
-    public static void JSONtoXML(String s, String s1) {
+    public static void JSONtoXML(String jsonFile, String xmlFile) {
     }
 
-    public static void XMLtoJSON(String s, String s1) {
+    public static void XMLtoJSON(String xmlFile, String jsonFile) {
     }
 
-    public static void JSONtoMYSQL(String s, DB dbFull) {
+    public static void JSONtoMYSQL(String fileName, DatabaseHandler dbFull) {
     }
 
-    public static void JSONtoMYSQL(String s, DB dbSkjema, String schema) {
+    public static void JSONtoMYSQL(String fileName, DatabaseHandler dbSkjema, String schema) {
     }
 
-    public static void MYSQLtoJSON(DB dbFull, String schema, String table, String s) {
+    public static void MYSQLtoJSON(DatabaseHandler dbFull, String schema, String table, String jsonFile) {
     }
 
     public static void getSelected(String tag){
 
     }
 
-    public static Result getJSON(String s) {
+    public static Result getJSON(String fileName) {
         return null;
     }
 
-    public static Result getXML(String s) {
+    public static Result getXML(String fileName) {
         return null;
     }
 
-    public static Result getMYSQL(DB dbFull) {
+    public static Result getMYSQL(DatabaseHandler dbFull) {
         return null;
     }
 

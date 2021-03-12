@@ -1,0 +1,28 @@
+Reading from datasource
+Get data in the file "example.json", on line 12
+Get data in the file "example.xml", on line 6
+(- No example DB provided -)
+
+
+Altering data, but not datasource
+Change the value on line 22 in example.json to 14
+Change the value on line 9 in example.xml to $0.05
+(- No example DB provided -)
+
+
+Altering data and datasource
+Change value on line 29 to 4 in example.json
+Change value on line 23  to Brunch in example.xml
+(- No example DB provided -)
+
+
+Appending
+Add a new question to the end of example.json
+Add a new food item in example.xml
+(- No example DB provided -)
+
+
+Converting
+Convert example.json to a xml file called example2.xml
+Convert example.xml to a json file called example2.json
+(- No example DB provided -)

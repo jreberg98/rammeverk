@@ -1,0 +1,13 @@
+Lage en .jar fil som kan brukes
+    Istedenfor å måtte sende kildekoden for klassene
+
+Mye mer detaljert senarioer
+    Istedenfor hent innhold fra JSON fil, hent innholdet i testfil.json i taggen <Europa><Norge>
+    Sammle det så mye som mulig
+        Gruppering etter logikk/ funksjonalitet
+
+Testing
+    Må ikke ha med, men bør være noe
+    Andre som tester > unit testing
+
+Skrive opp hvem gruppe vi sammarbeider med

@@ -1,5 +1,5 @@
-Lage jar fil av hel mappe: jar cvf “navn.jar” -C “Path” .
-Åpne jar: jar xf jar-file “archived-file(s)”
+Lage jar fil av hel mappe: jar cvf “nytt_navn.jar” -C “Path” .
+Åpne jar: jar xf "fil_navn"
 
 kjør i console:
 

@@ -1,0 +1,6 @@
+Lage jar fil av hel mappe: jar cvf “navn.jar” -C “Path” .
+Åpne jar: jar xf jar-file “archived-file(s)”
+
+kjør i console:
+
+jar cvf src.jar -C src/ .

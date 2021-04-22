@@ -1,0 +1,3 @@
+FileHandler:
+    22.04
+        Lagt til en public metode for å lese fil, som sjekker om en fil kan leses. Sjekker også om den skal leses som JSON eller XML. Skal kalles istedenfor getXML eller getJSON, som gjøres private

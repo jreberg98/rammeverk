@@ -13,7 +13,7 @@ public class Main {
 
 
         /* ----------   LESE FRA FIL   ------------ */
-
+/*
         // Hente ut spesifisert innhold i Json fil
         Result data = FileHandler.getJSON("fil.json");
         Result object = data.getByTag("planetsystemet");
@@ -34,6 +34,7 @@ public class Main {
         //redigere innhold i spesifisert tag i filen
 
         //Json
+        /*
        Result result = FileHandler.getJSON("fil.json");
        String path= result.getPath();
        result.setValue("new value",path);
@@ -52,6 +53,7 @@ public class Main {
         //Legge til et opbjekt uten å gjøre en endring på det andre som er i filen
 
         //Json
+        /*
         Result jRes = FileHandler.getJSON("fil.json");
         jRes.append(object);
 

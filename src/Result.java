@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public final class Result {
 
     protected String data;
-    protected ArrayList<Result> children = new ArrayList<Result>();
+    protected ArrayList<Result> children = new ArrayList<>();
     protected Result parent;
 
     protected void add(String child){
@@ -62,14 +62,10 @@ public final class Result {
 
     // Rekursiv metode for å skrive ut data
     private void print(Result node){
-        System.out.println("I metoden");
-        System.out.println(node.data + " ");
+        System.out.println(node.data);
 
-        if (children.isEmpty()){
-            System.out.println("Slutter metoden");
-            return;
+        for (int i = 0; i < node.children.size(); i++){
+            print(node.children.get(i));
         }
-
-        print(node.children.get(0));
     }
 }

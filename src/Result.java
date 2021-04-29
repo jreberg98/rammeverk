@@ -3,12 +3,17 @@ import java.util.ArrayList;
 public final class Result {
 
     // Har protected for å lette få tak i variabler, men ikke mulig å bruke utenfor pakka
-    protected String data;
+    protected String key, data;
     protected ArrayList<Result> children = new ArrayList<>();
     protected Result parent;
 
-    protected void add(String child){
-        Result temp = new Result(child);
+    protected void add(String key, String data){
+        Result temp = new Result(key, data);
+        children.add(temp);
+    }
+
+    protected void add(String key){
+        Result temp = new Result(key);
         children.add(temp);
     }
 
@@ -20,12 +25,38 @@ public final class Result {
         return children.get(children.size() - 1);
     }
 
-    public Result(String data) {
+    private Result(String data) {
         this.data = data;
     }
 
-    public Result getByTag(String planetsystemet) {
-        return null;
+    private Result(String key, String data) {
+        this.key = key;
+        this.data = data;
+    }
+
+    // Lager roten av trestrukturen
+    // TODO: Lage egen klasse av roten?
+    protected Result(){
+        this.key = "root";
+        this.data = "I am Root";
+        this.parent = this;
+    }
+
+
+    public Result getByTag(String tag) {
+        // Leter etter barnet med riktig tag
+        for (Result child : this.children){
+            if (child.key.equals(tag)){
+                return child;
+            }
+        }
+        // Leter en gang til hvis ikke funnet, men ser ikke på stor/liten bokstav
+        for (Result child : this.children){
+            if (child.key.equalsIgnoreCase(tag)){
+                return child;
+            }
+        }
+        throw new ArrayIndexOutOfBoundsException("Ingen barn med rett tag");
     }
 
     public Result getSelected(String tag) {
@@ -63,12 +94,15 @@ public final class Result {
     public static void main(String[] args){
         Result root = new Result("root");
 
-        root.add("Strom");
+        root.add("fornavn", "Strom");
         root.add("Kristian");
         root.lastChild().add("Ruud");
 
         root.setParents(root);
         root.print(root);
+
+        System.out.println("\n\n");
+        System.out.println(root.getByTag("fornavn").data);
     }
 
     // Rekursiv metode for å skrive ut data

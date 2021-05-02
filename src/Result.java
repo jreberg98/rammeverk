@@ -25,8 +25,8 @@ public final class Result {
         return children.get(children.size() - 1);
     }
 
-    private Result(String data) {
-        this.data = data;
+    private Result(String key) {
+        this.key = key;
     }
 
     private Result(String key, String data) {
@@ -88,6 +88,15 @@ public final class Result {
         }
     }
 
+
+    @Override
+    public String toString() {
+        if (this.data == null){
+            return this.key + " has " + children.size() + " children";
+        } else {
+            return this.key + " : " + this.data;
+        }
+    }
 
     // Under her er bare for å teste om noe fungerer
     // TODO: Fjerne dette når det virker

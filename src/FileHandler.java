@@ -74,29 +74,33 @@ public final class FileHandler {
             e.printStackTrace();
         }
 
-        scanner.next();
-        current = root = new Result(scanner.next());
+        // Lager roten, for å ha tak i "toppen" av treet
+        // Current er for å være mer fleksibel i treet som blir laget
 
+        current = root = new Result();
 
         // Bygger opp nodene og legger til barn sålenge filen ikke er ferdig
         String next;
-        while (scanner.hasNext()){
-            next = scanner.next();
+        while (scanner.hasNextLine()){
+            next = scanner.nextLine();
 
             // Lager en ny node
             if (next.startsWith("{")){
                 current.add(next);
                 current = current.lastChild();
             // Fyller inn data
-            } else if (next.startsWith("\"")){
-                current.add(next);
+            } else if (next.matches("^\"\\w+\": \"\\w+\" $")){
+                System.out.println("Lager ny node");
+                String[] splitted  = next.split(": ");
+                current.add(splitted[0], splitted[1]);
             // Går et hakk lengre opp
             } else if (next.startsWith("}")){
-
+                System.out.println("Går opp et hakk");
+                current = current.parent;
             }
 
 
-
+            System.out.println(next + "\n\n");
 
         }
 
@@ -109,6 +113,25 @@ public final class FileHandler {
 
     public static Result getMYSQL(DatabaseHandler dbFull) {
         return null;
+    }
+
+    public static void main(String[] args) {
+
+        /*
+        Result root = new Result();
+
+        root.add("Meg");
+        root.lastChild().add("Fornavn", "Jonathan");
+        root.lastChild().add("Mellomnavn", "Ruud");
+        root.lastChild().add("Etternavn", "Reberg");
+
+        System.out.println(root.children.get(0).children.get(0));
+        System.out.println(root.lastChild().getByTag("Fornavn"));
+        */
+
+        Result root = FileHandler.getJSON(new File("prosjekt/data/simple.json"));
+
+        root.print(root);
     }
 
 }

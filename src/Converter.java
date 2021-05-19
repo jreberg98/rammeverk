@@ -2,7 +2,7 @@ import java.io.File;
 // TODO: Fjerne hele filen?
 public class Converter {
 
-/* ------------- HENTE FIL LOKALT ELLER FRA URL -----------*/
+/* ------------- HENTE FIL FRA LOKAL MASKIN ELLER FRA URL (HTTP://) -----------*/
     public Converter(File file){
 
     }
@@ -10,7 +10,7 @@ public class Converter {
 
     }
 
-/*----------- FIL INFO FOR KONVERTOR&TOSTRING---------*/
+/*----------- FIL INFO FOR KONVERTERING & TOSTRING METODE---------*/
     private String printFile() {
         return null;
     }
@@ -30,8 +30,5 @@ public class Converter {
     public String toString() {
         return String.format("Laster inn: " + getFileType() + "Med navn: " + getFileName() + ":\n" + printFile());
     }
-
-
-
 
 }

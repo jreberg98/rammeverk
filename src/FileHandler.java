@@ -88,12 +88,12 @@ public final class FileHandler {
             if (next.startsWith("{")){
                 current.add(next);
                 current = current.lastChild();
-            // Fyller inn data
+                // Fyller inn data
             } else if (next.matches("^\"\\w+\": \"\\w+\" $")){
                 System.out.println("Lager ny node");
                 String[] splitted  = next.split(": ");
                 current.add(splitted[0], splitted[1]);
-            // Går et hakk lengre opp
+                // Går et hakk lengre opp
             } else if (next.startsWith("}")){
                 System.out.println("Går opp et hakk");
                 current = current.parent;
@@ -119,12 +119,10 @@ public final class FileHandler {
 
         /*
         Result root = new Result();
-
         root.add("Meg");
         root.lastChild().add("Fornavn", "Jonathan");
         root.lastChild().add("Mellomnavn", "Ruud");
         root.lastChild().add("Etternavn", "Reberg");
-
         System.out.println(root.children.get(0).children.get(0));
         System.out.println(root.lastChild().getByTag("Fornavn"));
         */

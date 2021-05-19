@@ -98,14 +98,11 @@ public final class Result {
         }
     }
 
-    // Under her er bare for å teste om noe fungerer
-    // TODO: Fjerne dette når det virker
+    // tester mot henting av data i henhold til taggs
     public static void main(String[] args){
         Result root = new Result("root");
 
-        root.add("fornavn", "Strom");
-        root.add("Kristian");
-        root.lastChild().add("Ruud");
+        root.add("fornavn","peter");
 
         root.setParents(root);
         root.print(root);
@@ -114,8 +111,8 @@ public final class Result {
         System.out.println(root.getByTag("fornavn").data);
     }
 
-    // Rekursiv metode for å skrive ut data
-    protected void print(Result node){
+    // Rekursiv metode for å skrive ut data for tester
+    public void print(Result node){
         System.out.println(node.data);
 
         for (int i = 0; i < node.children.size(); i++){

@@ -108,6 +108,7 @@ public final class FileHandler {
     }
 
     private static Result getXML(File fileName) {
+
         return null;
     }
 
@@ -127,9 +128,10 @@ public final class FileHandler {
         System.out.println(root.lastChild().getByTag("Fornavn"));
         */
 
-        Result root = FileHandler.getJSON(new File("prosjekt/data/simple.json"));
+        // Result root = FileHandler.getJSON(new File("prosjekt/data/example.json"));
+        Result root = FileHandler.getXML(new File("prosjekt/data/example.xml"));
 
-        root.print(root);
+        //System.out.println(root);
     }
 
 }

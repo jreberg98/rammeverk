@@ -6,15 +6,16 @@ public class Main {
 
         /* ------------- DATABASE ---------------- */
         // En ekstra klasse til å holde en kobling til databasen
+        /*
         DatabaseHandler dbFull = FileHandler.connectMYSQL("adresse", "brukernavn", "passord");
         DatabaseHandler dbSkjema = FileHandler.connectMYSQL("adresse", "brukernavn", "passord").selectSchema("skjema");
         DatabaseHandler dbTabell = FileHandler.connectMYSQL("adresse", "brukernavn", "passord").selectSchema("skjema").selectTable("navn");
 
-
+         */
         /* ----------   LESE FRA SPESIFISERT FIL   ------------ */
 /*
         // Hente ut spesifisert innhold i Json fil
-        Result data = FileHandler.getJSON("fil.json");
+        Result data = FileHandler.getJSON("prosjekt/data/example.json");
         Result object = data.getByTag("planetsystemet");
         Result outer = object.getByTag("planet");
         Result middle = outer.getByTag("by");
@@ -39,7 +40,7 @@ public class Main {
        result.setValue("new value",path);
 
 
-       //Redigering av innholdi XML fil
+       //Redigering av innhold i XML fil
         Result xResult = FileHandler.getJSON("fil.xml");
         String xPath= xResult.getPath();
         xResult.setValue("new value",xPath);
@@ -67,13 +68,13 @@ public class Main {
 
 
         /* -------------- FIL KONVERTERE -------------- */
-        FileHandler.XMLtoJSON("fil.xml", "nyfil.json");
-        FileHandler.JSONtoXML("fil.json", "nyfil.xml");
-        FileHandler.JSONtoMYSQL("fil.json", dbFull);
-        FileHandler.JSONtoMYSQL("fil.json", dbSkjema, "schema");
-        FileHandler.JSONtoMYSQL("fil.json", dbTabell, "schema", "table");
-        FileHandler.MYSQLtoJSON(dbFull, "nyfil.json");
-        FileHandler.MYSQLtoJSON(dbFull, "schema", "table", "nyfil.json");
+        FileHandler.XMLtoJSON("prosjekt/data/example.xml", "prosjekt/data/nyfil.json");
+        FileHandler.JSONtoXML("prosjekt/data/nyfil.json", "prosjekt/data/nyfil.xml");
+        // FileHandler.JSONtoMYSQL("fil.json", dbFull);
+        // FileHandler.JSONtoMYSQL("fil.json", dbSkjema, "schema");
+        // FileHandler.JSONtoMYSQL("fil.json", dbTabell, "schema", "table");
+        // FileHandler.MYSQLtoJSON(dbFull, "nyfil.json");
+        // FileHandler.MYSQLtoJSON(dbFull, "schema", "table", "nyfil.json");
 
 
         // TODO: Legge til setValue(String), setValue(String, String), addValue(String, String), addValue(Tree)

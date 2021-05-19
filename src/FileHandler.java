@@ -83,24 +83,41 @@ public final class FileHandler {
         String next;
         while (scanner.hasNextLine()){
             next = scanner.nextLine();
+            next = next.replace("\"", "");
 
-            // Lager en ny node
-            if (next.startsWith("{")){
-                current.add(next);
+            // Lager en ny node for fil innholdet
+            if (next.startsWith("{")) {
+                // Er i rot noden
+            } else if (next.contains("[")){
+                // Lagrer en array spm en sammenhengende string
+                String key = next.split(":")[0];
+                String temp = "";
+                next = scanner.next();
+                String seperator = ":-:";
+                // Slår sammen alle elementene i løkken
+                while (!next.contains("]")){
+                    next = next.replace(",", "");
+                    next = next.replace("\"", "");
+                    temp += seperator + next;
+                    next = scanner.next();
+                }
+                // Legger til en node med nøkkelen lik forelderen, og sata med string tilsvarende alle elementer, skilt med et skilletegn
+                current.add(key, temp);
+            } else if (next.contains("{")) {
+                // Lager en ny foreldernode
+                String[] splitted = next.split(":");
+                current.add(splitted[0]);
                 current = current.lastChild();
-                // Fyller inn data
-            } else if (next.matches("^\"\\w+\": \"\\w+\" $")){
-                System.out.println("Lager ny node");
+
+
+            } else if (next.contains(":")){
+                // Lager et nytt barn
                 String[] splitted  = next.split(": ");
                 current.add(splitted[0], splitted[1]);
-                // Går et hakk lengre opp
             } else if (next.startsWith("}")){
-                System.out.println("Går opp et hakk");
+                // Går en node opp for å fortsette på treet
                 current = current.parent;
             }
-
-
-            System.out.println(next + "\n\n");
 
         }
 
@@ -128,8 +145,10 @@ public final class FileHandler {
         System.out.println(root.lastChild().getByTag("Fornavn"));
         */
 
-        // Result root = FileHandler.getJSON(new File("prosjekt/data/example.json"));
-        Result root = FileHandler.getXML(new File("prosjekt/data/example.xml"));
+        Result root = FileHandler.getJSON(new File("prosjekt/data/simple.json"));
+        //Result root = FileHandler.getXML(new File("prosjekt/data/example.xml"));
+
+        root.print2(root.lastChild());
 
         //System.out.println(root);
     }

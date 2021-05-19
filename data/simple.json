@@ -1,3 +1,11 @@
 {
-  "quiz": "questions "
+  "quiz": {
+    "test": {
+      "navn": [
+        "sørlands",
+        "chips",
+        "smilefjes"
+      ]
+    }
+  }
 }

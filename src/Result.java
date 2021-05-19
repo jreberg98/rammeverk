@@ -100,7 +100,7 @@ public final class Result {
 
     // tester mot henting av data i henhold til taggs
     public static void main(String[] args){
-        Result root = new Result("root");
+        Result root = new Result();
 
         root.add("fornavn","peter");
 
@@ -112,11 +112,20 @@ public final class Result {
     }
 
     // Rekursiv metode for å skrive ut data for tester
-    public void print(Result node){
+    protected void print(Result node){
+        // Printer ut bare bare data i noden
         System.out.println(node.data);
 
         for (int i = 0; i < node.children.size(); i++){
             print(node.children.get(i));
+        }
+    }
+    // Samme som over, men både nøkkel og data
+    protected void print2(Result node){
+        System.out.println(node);
+
+        for (int i = 0; i < node.children.size(); i++){
+            print2(node.children.get(i));
         }
     }
 }

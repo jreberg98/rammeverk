@@ -47,8 +47,8 @@ public final class FileHandler {
             throw new IOException("File found, but can not be read");
         }
 
-        String type = "";
-        // TODO: sjekke filtypen, og oppdatere type
+        String[] splitted = file.getName().split("\\.");
+        String type = splitted[splitted.length - 1];
         switch (type.toUpperCase()){
             case "JSON":
                 return getJSON(file);
@@ -58,7 +58,6 @@ public final class FileHandler {
                 // Filen har en filendelse som ikke støttes
                 throw new FileNotFoundException("Filen har feil filformat");
         }
-
     }
 
     private static Result getJSON(File file) {
@@ -175,7 +174,7 @@ public final class FileHandler {
         return null;
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         /*
         Result root = new Result();
@@ -188,7 +187,7 @@ public final class FileHandler {
         */
 
         //Result root = FileHandler.getJSON(new File("prosjekt/data/simple.json"));
-        Result root = FileHandler.getXML(new File("prosjekt/data/simple.xml"));
+        Result root = FileHandler.read(new File("prosjekt/data/simple.xml"));
 
         System.out.println("\n\n\n");
         root.print2(root);

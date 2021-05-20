@@ -124,9 +124,51 @@ public final class FileHandler {
         return root;
     }
 
-    private static Result getXML(File fileName) {
+    private static Result getXML(File file) {
+        // Lager roten i filen
+        Result root, current;
 
-        return null;
+
+        // Leser fila
+        Scanner scanner = null;
+        try {
+            scanner = new Scanner(file);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        // Lager roten, for å ha tak i "toppen" av treet
+        // Current er for å være mer fleksibel i treet som blir laget
+        current = root = new Result();
+
+        // Bygger opp nodene og legger til barn sålenge filen ikke er ferdig
+        String next;
+
+        while (scanner.hasNextLine()){
+            next = scanner.nextLine();
+
+
+            if (next.matches("^\\s*\\<\\w+\\>$")) {
+                current.add(next.replace("<", "").replace(">", ""));
+                current = current.lastChild();
+            // Matcher med både start tag og slutt tag
+            } else if (next.matches("^\\s*\\<\\w+\\>[\\w ]+\\<\\/\\w+\\>$")){
+                String[] splitted = next.split(">");
+                String[] data = splitted[1].split("<");
+                current.add(splitted[0].replace("<", ""), data[0]);
+            } else if (next.matches("^\\s*\\<\\w+\\>[\\w ]+\\<\\/\\w+\\> \\<\\/\\w+\\>$")) {
+                String[] splitted = next.split(">");
+                String[] data = splitted[1].split("<");
+                current.add(splitted[0].replace("<", ""), data[0]);
+                current = current.parent;
+            } else if (next.matches("^\\s*\\<\\w+\\>$")){
+                current = current.parent;
+            }
+        }
+
+
+
+        return root;
     }
 
     public static Result getMYSQL(DatabaseHandler dbFull) {
@@ -145,10 +187,11 @@ public final class FileHandler {
         System.out.println(root.lastChild().getByTag("Fornavn"));
         */
 
-        Result root = FileHandler.getJSON(new File("prosjekt/data/simple.json"));
-        //Result root = FileHandler.getXML(new File("prosjekt/data/example.xml"));
+        //Result root = FileHandler.getJSON(new File("prosjekt/data/simple.json"));
+        Result root = FileHandler.getXML(new File("prosjekt/data/simple.xml"));
 
-        root.print2(root.lastChild());
+        System.out.println("\n\n\n");
+        root.print2(root);
 
         //System.out.println(root);
     }

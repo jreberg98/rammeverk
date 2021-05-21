@@ -107,16 +107,6 @@ public final class Result {
     public void append(Object object, long lineNumber){
     }
 
-    // Setter riktig forelder til alle noder
-    // Gjøres rekursivt
-    private void setParents(Result node){
-        for (int i = 0; i < node.children.size(); i++){
-            node.children.get(i).parent = node;
-            node.children.get(i).setParents(node.children.get(i));
-        }
-    }
-
-
     @Override
     public String toString() {
         if (this.data == null){
@@ -132,7 +122,6 @@ public final class Result {
 
         root.add("fornavn","peter");
 
-        root.setParents(root);
         root.print(root);
 
         System.out.println("\n\n");

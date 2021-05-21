@@ -189,8 +189,7 @@ public final class FileHandler {
         //Result root = FileHandler.getJSON(new File("prosjekt/data/simple.json"));
         Result root = FileHandler.read(new File("prosjekt/data/simple.xml"));
 
-        System.out.println("\n\n\n");
-        root.print2(root);
+        System.out.println("\n\n" + root.getByTag("name").getByTag("nummer2").getPath() + "\n\n");
 
         //System.out.println(root);
     }

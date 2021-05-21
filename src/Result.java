@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Stack;
 
 public final class Result {
 
@@ -8,11 +9,17 @@ public final class Result {
     protected Result parent;
 
     protected void add(String key, String data){
+
+        key = key.replace(" ", "");
+
         Result temp = new Result(key, data);
         children.add(temp);
     }
 
     protected void add(String key){
+
+        key = key.replace(" ", "");
+
         Result temp = new Result(key);
         children.add(temp);
     }
@@ -69,7 +76,26 @@ public final class Result {
     public void setValue(String newValue, long lineNumber){}
 
     public String getPath() {
-        return null;
+        Stack stack = new Stack<String>();
+        String temp = "";
+        Result current = this;
+
+        // Lager en stack for å holde alle nøkkelverdier
+        while (!current.key.equals("root")){
+            stack.add(current.key);
+            current = current.parent;
+            if (current == null){
+                break;
+            }
+            System.out.println("whiler");
+        }
+
+        // Bygger opp path til der vi var
+        while (!stack.isEmpty()){
+            temp += "/" + stack.pop();
+        }
+
+        return temp;
     }
 
     public void append(Object object) {

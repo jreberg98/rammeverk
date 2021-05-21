@@ -14,6 +14,7 @@ public final class Result {
 
         Result temp = new Result(key, data);
         children.add(temp);
+        lastChild().parent = this;
     }
 
     protected void add(String key){
@@ -22,6 +23,7 @@ public final class Result {
 
         Result temp = new Result(key);
         children.add(temp);
+        lastChild().parent = this;
     }
 
     // Returnerer det nyeste elementet som er lagt til
@@ -76,15 +78,15 @@ public final class Result {
     public void setValue(String newValue, long lineNumber){}
 
     public String getPath() {
-        Stack stack = new Stack<String>();
+        Stack<String> stack = new Stack<String>();
         String temp = "";
         Result current = this;
 
         // Lager en stack for å holde alle nøkkelverdier
-        while (!current.key.equals("root")){
+        while (current != null){
             stack.add(current.key);
             current = current.parent;
-            if (current == null){
+            if (current.key.equals("root")){
                 break;
             }
             System.out.println("whiler");

@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Stack;
 
 public final class Result {
@@ -53,6 +54,8 @@ public final class Result {
 
 
     public Result getByTag(String tag) {
+
+
         // Leter etter barnet med riktig tag
         for (Result child : this.children){
             if (child.key.equals(tag)){
@@ -66,6 +69,24 @@ public final class Result {
             }
         }
         throw new ArrayIndexOutOfBoundsException("Ingen barn med rett tag");
+    }
+
+    public Result getByPath(String[] tags){
+
+        Result temp = this;
+
+        for (String tag : tags) {
+            if (tag == null){
+                continue;
+            }
+            temp = temp.getByTag(tag);
+        }
+
+        return temp;
+    }
+    public Result getByPath(String path){
+        String[] tags = path.split("/");
+        return getByPath(Arrays.copyOfRange(tags, 1, 100));
     }
 
     public Result getSelected(String tag) {
@@ -89,7 +110,6 @@ public final class Result {
             if (current.key.equals("root")){
                 break;
             }
-            System.out.println("whiler");
         }
 
         // Bygger opp path til der vi var

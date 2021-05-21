@@ -190,6 +190,7 @@ public final class FileHandler {
         Result root = FileHandler.read(new File("prosjekt/data/simple.xml"));
 
         System.out.println("\n\n" + root.getByTag("name").getByTag("nummer2").getPath() + "\n\n");
+        System.out.println("\n\n" + root.getByPath("/name/nummer2"));
 
         //System.out.println(root);
     }
